@@ -1,0 +1,84 @@
+<import src="../we-cropper/we-cropper.wxml"/>
+<!--index.wxml-->
+<view class="container">
+  <view id="card" class="card {{ layout.name }}" data-bgc="{{ style.bgc }}" style="background: {{ style.bgc }}; bottom: 1px solid {{ style.pc }};">
+    <view class="image" style="padding-top: {{ layout.padding}}px;padding-bottom: {{ layout.padding}}px;">
+      <view id="card-image" data-bsize="{{ layout.border }}" data-bcolor="{{ style.bc }}" style="border: {{ layout.border }}px solid {{ style.bc }};">
+        <template is="we-cropper" data="{{...cropperOpt}}"/>
+      </view>
+    </view>
+
+    <view class="text">
+      <view class="p" >
+        <text wx:if="{{ text.p.active }}" id="pText" 
+          style="color: {{ style.pc }}; font-size: {{ layout.psize }}px;" 
+          data-fontSize='{{ layout.psize }}' 
+          data-color="{{ style.pc }}"
+          data-text="{{ text.p.text }}">{{ text.p.text }}</text>
+      </view>
+      <view  class="m">
+        <text wx:if="{{ text.m.active }}"id="mText" 
+          style="color: {{ style.mc }}; font-size: {{ layout.msize }}px;"
+          data-fontSize='{{ layout.msize }}'
+          data-color="{{ style.mc }}"
+          data-text="{{ text.m.text }}">{{ text.m.text }}</text>
+      </view>
+    </view>
+  </view>
+
+  <canvas 
+    style="position: fixed; top: -{{canvas.card.height * ratio}}px; left: -{{canvas.card.width * ratio}}px; width: {{canvas.card.width * ratio}}px; height: {{canvas.card.height * ratio}}px;" canvas-id="copyCanvas"></canvas>
+
+  <view class="controller">
+    <view class="style" wx:if="{{ active === 1 }}">
+      <view 
+        wx:for="{{ globalStyles }}" 
+        wx:key="{{ index }}"
+        bindtap="onChangeStyle"
+        data-index="{{ index }}"
+        class="item" style="background: {{ item.bgc }};"></view>
+    </view>
+    <view wx:if="{{ active === 2 }}" style="width: 100%;">
+      <van-cell-group>
+        <van-field
+          style="background: #000; color: #fff; width: 100%;"
+          value="{{ text.p.text }}"
+          clearable
+          label="主要"
+          icon="{{ text.p.active ? 'checked' : 'circle' }}"
+          bindinput="bindPTextInput"
+          placeholder="主要显示文本"
+          border="{{ false }}"
+          bind:click-icon="onTogglePtext"
+        />
+
+        <van-field
+          style="background: #000; color: #fff; width: 100%;"
+          value="{{ text.m.text }}"
+          clearable
+          label="次要"
+          icon="{{ text.m.active ? 'checked' : 'circle' }}"
+          bindinput="bindMTextInput"
+          placeholder="次要显示文本"
+          border="{{ false }}"
+          bind:click-icon="onToggleMtext"
+        />
+      </van-cell-group>
+    </view>
+    <view wx:if="{{ active === 3 }}" class="export">
+      <van-loading wx:if="{{ createStatus === 'ing' }}" color="#404040"/>
+      <van-icon wx:if="{{ createStatus === 'done' }}" color="#7ed3b2" name="completed"/>
+      <van-icon wx:if="{{ createStatus === 'fail' }}" color="#" name="failure"/>
+      <text wx:if="{{ createStatus === 'ing' }}" class="createstatus">正在制作...</text>
+      <text wx:if="{{ createStatus === 'done' }}" class="createstatus">已保存到相册</text>
+      <text wx:if="{{ createStatus === 'fail' }}" class="createstatus">保存失败</text>
+    </view>
+  </view>
+
+  <van-tabbar active="{{ active }}" bind:change="onTabChange">
+    <van-tabbar-item icon="arrow-left"></van-tabbar-item>
+    <van-tabbar-item icon="fire-o"></van-tabbar-item>
+    <van-tabbar-item icon="edit"></van-tabbar-item>
+    <van-tabbar-item icon="circle"></van-tabbar-item>
+  </van-tabbar>
+</view>

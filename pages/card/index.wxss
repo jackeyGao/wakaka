@@ -1,0 +1,187 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.cropper-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  color: #fff;
+  line-height: 45px;
+  justify-content: center;
+}
+
+
+.card {
+  background: #393e46;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.card .image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card.normal .image {
+}
+
+.card .text {
+  width: calc(100% - 40px);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.card.normal .text {
+  margin-bottom: 20px;
+}
+
+.card .p {
+  color: #222831;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card .m {
+  color: #d1d1d1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card.horizon .text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card.horizon .p {
+  color: #222831;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card.horizon .m {
+  color: #d1d1d1;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+
+.card.exhibit .text {
+  margin-top: 20px;
+}
+
+.card.exhibit .p {
+  color: #222831;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  margin-bottom: 10px
+}
+
+.card.exhibit .m {
+  color: #d1d1d1;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.copy {
+  display: none;
+}
+
+.controller {
+  color: #fff;
+  width: 100%;
+  position:fixed;
+  bottom: 50px;
+  left:0;
+}
+
+/*
+.controller .van-cell {
+  background-color: #000;
+  color: #fff;
+}
+
+
+.controller .van-field__input {
+  color: #ccc;
+  width: 100%;
+}
+
+
+.van-tabbar {
+  background-color: #000!important;
+}
+
+
+.van-tabbar-item {
+  color: #fff!important;
+}
+
+.van-tabbar-item.van-tabbar-item--active {
+  color: #ffe411!important;
+}
+*/
+
+.style {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28rpx;
+}
+
+.style .item {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin: 14rpx;
+}
+
+.export {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24rpx;
+}
+
+.createstatus, .export .van-icon {
+  color: #404040;
+  font-weight: 300;
+  font-size: 32rpx;
+  line-height: 2;
+  letter-spacing: 5rpx;
+}
+
+.createstatus {
+  padding-left: 16rpx;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

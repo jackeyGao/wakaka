@@ -1,0 +1,31 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <scroll-view
+    class="main"
+    scroll-x
+    scroll-with-animation="{{true}}"
+    bindscroll="onScroll"
+    >
+    <view id="normal" class="scroll-view-item bc_green">
+      <view class="intro">
+        <view class="title">经典</view>
+        <view class="meta">适用于比例为1:1照片</view>
+      </view>
+      <image mode="aspectFit" data-layout="normal" bindtap="uploadTap" src="../assets/normal.jpeg"></image>
+    </view>
+    <view id="horizon" class="scroll-view-item bc_red">
+      <view class="intro">
+        <view class="title">地平线</view>
+        <view class="meta">适用于比例为4:3照片</view>
+      </view>
+      <image mode="aspectFit" data-layout="horizon" bindtap="uploadTap" src="../assets/horizon.jpeg"></image>
+    </view>
+      <view id="exhibit" class="scroll-view-item bc_yellow">
+       <view class="intro">
+        <view class="title">展览</view>
+        <view class="meta">适用于所有比例照片</view>
+      </view>
+      <image mode="aspectFit" data-layout="exhibit" bindtap="uploadTap" src="../assets/exhibit.jpeg"></image>
+    </view>
+  </scroll-view>
+</view>

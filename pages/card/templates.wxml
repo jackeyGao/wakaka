@@ -1,0 +1,9 @@
+
+<!--
+  index: int
+  msg: string
+  time: string
+-->
+<template name="normal">
+  
+</template>

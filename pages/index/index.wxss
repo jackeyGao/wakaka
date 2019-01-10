@@ -1,0 +1,54 @@
+/* pages/index/index.wxss */
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  height: 80%;
+  width: 750rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  white-space: nowrap;
+  align-content: center;
+  align-items: center;
+}
+
+.scroll-view-item {
+  display: inline-flex;
+  width: 750rpx;
+  height: 100%;
+  flex-direction: column;
+  margin-right: 20rpx;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.scroll-view-item image {
+  width: 750rpx;
+  height: 550rpx;
+}
+
+.scroll-view-item .intro {
+  padding-bottom: 150rpx;
+}
+
+.scroll-view-item .title {
+  width: 100%;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 500;
+  letter-spacing: 5rpx;
+  line-height: 2;
+}
+
+.scroll-view-item .meta {
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 300;
+  letter-spacing: 2rpx;
+  line-height: 2;
+}
+
